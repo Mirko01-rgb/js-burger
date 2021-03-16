@@ -1,11 +1,10 @@
 var calcolaPrezzo = document.getElementById('calculate');
 
-// console.log(price)
-var finalPrice = 10;
 
 
 calcolaPrezzo.addEventListener('click', function(){
   // console.log('Ho cliccato qui');
+  var finalPrice = 10;
 
   // Stampa allert se non inserisci il nome
   var burgerName = document.getElementById('burger-name').value;
@@ -19,6 +18,7 @@ calcolaPrezzo.addEventListener('click', function(){
   //Checkbox  con i vari ingredienti
   var ingredients = document.getElementsByClassName('ingred');
   // console.log(ingredients);
+
   for (var i = 0; i < ingredients.length; i++) {
     // console.log(ingredients[i]);
     var ingredient = ingredients[i];
@@ -26,13 +26,15 @@ calcolaPrezzo.addEventListener('click', function(){
 
     var isCheckedIngredient = ingredient.checked;
     // console.log(isCheckedIngredient);
-
     var price = parseInt(ingredient.dataset.price); // come se fosse una cartella
     // console.log(price);
+
     if (isCheckedIngredient) {
-      finalPrice += price;          //prezzo + sovrapprezzo
+      finalPrice += price; //prezzo + sovrapprezzo
     }
+
   }
+
 
 
   //coupons
